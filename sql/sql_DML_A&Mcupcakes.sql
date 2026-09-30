@@ -1,4 +1,4 @@
-USE ANM_Cupcakes2;
+USE ANM_Cupcakes;
 GO
 
 /*inserting records into the tables
