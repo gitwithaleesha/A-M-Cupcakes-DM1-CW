@@ -1,33 +1,39 @@
-CREATE DATABASE ANM_Cupcakes;
+CREATE DATABASE ANM_Cupcakes2;
 GO
 
-USE ANM_Cupcakes;
+USE ANM_Cupcakes2;
 GO
 
 --creating all the tables with their attributes
 CREATE TABLE Customer(
-	CustomerID INT PRIMARY KEY,
+	CustomerID INT IDENTITY(1,1) PRIMARY KEY,
 	CustomerName VARCHAR(100) NOT NULL,
 	PhoneNumber VARCHAR(10),
 	Email VARCHAR(50)
 );
 
 CREATE TABLE Employee(
-	EmployeeID INT PRIMARY KEY,
+	EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
 	EmployeeName VARCHAR(100) NOT NULL,
-	PhoneNumber VARCHAR(10),
 	Salary DECIMAL (10,2),
 	JobRole VARCHAR(35)
 );
 
+CREATE TABLE EmployeePhoneNo( --emp phone no is a multivalued attribute so we create a new table for normalized form
+	EmployeeID INT NOT NULL,
+	EmployeePhoneNum VARCHAR(10) NOT NULL,
+	PRIMARY KEY (EmployeeID,EmployeePhoneNum),
+	FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID) ON DELETE CASCADE --deletes any records from all connected tables
+);
+
 CREATE TABLE Branch(
-	BranchID INT PRIMARY KEY,
+	BranchID INT IDENTITY(1,1) PRIMARY KEY,
 	BranchName VARCHAR(100) NOT NULL,
 	BranchLocation VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Orders(
-	OrderID INT PRIMARY KEY,
+	OrderID INT IDENTITY(1,1) PRIMARY KEY,
 	OrderDate DATE NOT NULL,
 	CustomerID INT NOT NULL,
 	EmployeeID INT NOT NULL,
@@ -38,7 +44,7 @@ CREATE TABLE Orders(
 );
 
 CREATE TABLE Payment(
-	PaymentID INT PRIMARY KEY,
+	PaymentID INT IDENTITY(1,1) PRIMARY KEY,
 	Amount DECIMAL(7,2) NOT NULL,
 	PaymentMethod VARCHAR(20) NOT NULL, 
 	PaymentStatus VARCHAR(20) NOT NULL,
@@ -48,12 +54,12 @@ CREATE TABLE Payment(
 );
 
 CREATE TABLE Category(
-	CategoryID INT PRIMARY KEY,
+	CategoryID INT IDENTITY(1,1) PRIMARY KEY,
 	CategoryName VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Cake(
-	CakeID INT PRIMARY KEY,
+	CakeID INT IDENTITY(1,1) PRIMARY KEY,
 	CakeName VARCHAR(40) NOT NULL,
 	CakeSize DECIMAL(4,2), --size in kg
 	Price DECIMAL(7,2) NOT NULL,
