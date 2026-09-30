@@ -1,7 +1,7 @@
-CREATE DATABASE ANM_Cupcakes2;
+CREATE DATABASE ANM_Cupcakes;
 GO
 
-USE ANM_Cupcakes2;
+USE ANM_Cupcakes;
 GO
 
 --creating all the tables with their attributes
