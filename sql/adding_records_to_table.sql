@@ -10,9 +10,9 @@ INSERT INTO Customer (CustomerName, PhoneNumber, Email) VALUES
 ('Emily Watson', '0758765432', 'emily.watson67@gmail.com'),
 ('Tharindu Jayasinghe', '0782345678', 'tharindu.j@gmail.com'),
 ('Nimmi De Silva', '0769876543', 'nimmi.desilva0@hotmail.com'),
-('Thavinsa Perera', '0741403228', 'thavi.perera@gmail.com'),
-('Mubashira Akram', '0771607465', 'mubaAk@yahoo.com'),
-('Durangi Gomes', '0742982600', 'durangi.g@hotmail.com'),
+('Thavinsa Perera', '0741401234', 'thavi.perera@gmail.com'),
+('Mubashira Akram', '0774356465', 'mubaAk@yahoo.com'),
+('Durangi Gomes', '0742976450', 'durangi.g@hotmail.com'),
 ('Aleesha Ismail', '0743365119', 'aleesha7@gmail.com');
 GO
 
